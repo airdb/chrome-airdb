@@ -1,13 +1,9 @@
 <template>
   <div>
     <p>{{ defaultText }}</p>
-    <a @click="openOn" href="https://github.com/kocal/vue-web-extension">uic swagger</a>
-    <br>
-    <a href="https://www.w3schools.com">uic swagger</a>
-    <br>
-    <a href="https://www.w3schools.com">airdb.dev</a>
-    <br>
-    <a href="https://www.w3schools.com">airdb.io</a>
+    <div v-for="item in items">
+       <a href="#" @click="openOn(item.url)">{{ item.name }}</a>
+    </div>
   </div>
 </template>
 
@@ -17,11 +13,22 @@ export default {
   mounted () {
     browser.runtime.sendMessage({})
   },
+  data () {
+    return {
+      items: [
+        {"name": "vue-chrome-extersion", "url": "https://github.com/airdb/chrome-airdb"},
+        {"name": "uic swagger", "url": "https://scf.baobeihuijia.com/test/uic/"},
+        {"name": "login", "url": "https://scf.baobeihuijia.com/test/uic/login"},
+        {"name": "airdb.dev", "url": "https://airdb.dev"},
+        {"name": "airdb.io", "url": "https://airdb.io"},
+      ]
+    }
+  },
   methods: {
-    openOn() {
+    openOn(url) {
       console.log("xxx")
       chrome.tabs.create( {
-	url: "https://github.com/kocal/vue-web-extension"
+	url: url
       })
     },
     openOnNewTab(newTab) {
