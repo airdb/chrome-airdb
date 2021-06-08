@@ -1,6 +1,11 @@
 <template>
   <div>
     <p>{{ defaultText }}</p>
+    <div class="" @keydown="($event)" @keyup.ctrl="ctrlHandler">
+        <div class="">
+          <input type="text" id="textbox" value="" placeholder="search" autofocus>
+        </div>
+    </div>
     <div v-for="item in items">
        <a href="#" @click="openOn(item.url)">{{ item.name }}</a>
     </div>
@@ -12,6 +17,7 @@ export default {
   name: 'HelloWorld',
   mounted () {
     browser.runtime.sendMessage({})
+    document.getElementById("textbox").focus();
   },
   data () {
     return {
@@ -25,6 +31,11 @@ export default {
     }
   },
   methods: {
+    focusInput() {
+      console.log("bbb")
+      this.$refs.search.$el.focus
+      console.log("ccc")
+    },
     openOn(url) {
       console.log("xxx")
       chrome.tabs.create( {
