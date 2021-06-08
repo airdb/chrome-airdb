@@ -6,7 +6,8 @@
           <input type="text" id="textbox" value="" placeholder="search" autofocus>
         </div>
     </div>
-    <div v-for="item in items">
+
+    <div v-for="(item, index) in items" :key="index">
        <a href="#" @click="openOn(item.url)">{{ item.name }}</a>
     </div>
   </div>
