@@ -4,7 +4,6 @@
 
 <script>
 import HelloWorld from '@/components/HelloWorld.vue'
-import dashbord from '@/components/dashbord.vue'
 
 export default {
   name: 'App',

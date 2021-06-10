@@ -40,6 +40,7 @@ export default {
         { name: "login", url: "https://scf.baobeihuijia.com/test/uic/login" },
         { name: "airdb.dev", url: "https://airdb.dev" },
         { name: "airdb.io", url: "https://airdb.io" },
+        { name: "extention", url: "/index.html" },
       ],
     };
   },
