@@ -41,6 +41,7 @@ export default {
         { name: "airdb.dev", url: "https://airdb.dev" },
         { name: "airdb.io", url: "https://airdb.io" },
         { name: "extention", url: "/index.html" },
+        { name: "chrome-dns", url: "chrome://net-internals/#dns" },
       ],
     };
   },
